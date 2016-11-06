@@ -316,24 +316,27 @@ template<typename Comparable>
 int BinarySearchTree<Comparable>::totalLevel(TreeNode * treePtr, int initLevel) const
 {
 	if (treePtr == NULL)		//check base case
-		return 0;
+		return 0;			//return 0 if tree is empty
 	else
 	{
 		//make recursive call on each subtree
-		int left = totalLevel(treePtr->left);
-		int right = totalLevel(treePtr->right);
+		int left = totalLevel(treePtr->leftChildPtr, initLevel);			//recursive call on left subtree
+		int right = totalLevel(treePtr->rightChildPtr, initLevel);		//recursive call on right subtree
 
 		//use the larger subtree for the return value
 		if (left > right)
-			return(left + 1);
-		else return(right + 1);
+			return(left + 1);		//return left tree plus root node
+		else 
+			return(right + 1);		//return right tree plus root node
 	}
 }
 
 template<typename Comparable>
 int BinarySearchTree<Comparable>::totalLevel(void) const
 {
-	return 256;
+	TreeNode * treePtr = this->rootPtr();	//create TreeNode pointer
+	int initLevel = 1;						//initial level will be root at level 1
+	return totalLevel(treePtr, initLevel);	//make call to private totalLevel function
 }
 
 

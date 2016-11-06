@@ -62,18 +62,19 @@ int main( void )
 		cout << "Number of Tree nodes: " << nodeTotal << endl;		
 
 		//calculate the total level of the BST
-		cout << "Total levels of the tree: " << tree->totalLevel() << endl;
+		int totalLevel = tree->totalLevel();
+		cout << "Total levels of the tree: " << totalLevel << endl;
 
 		//calculate the log(n) of the BST where n is the # of nodes in the BST
-		float logN = log(nodeTotal);
-		cout << "The log(n) of the tree is " << logN << endl;
+		//float logN = log(nodeTotal);
+		cout << "The log(n) of the tree is " << log(nodeTotal) << endl;
 
 		//calculate the average level, i.e. total level / # of nodes
-		float AverageLevel = (tree->totalLevel() / nodeTotal);
-		cout << "The average level is " << AverageLevel << endl;
+		//float averageLevel = (totalLevel / nodeTotal);
+		cout << "The average level is " << (totalLevel / nodeTotal) << endl;
 
 		//calculate the expression: AverageLevel/log(n)
-		cout << "AverageLevel/log(n) is " << AverageLevel / logN << endl;
+		cout << "AverageLevel/log(n) is " << (totalLevel / nodeTotal) / (log(nodeTotal)) << endl;
 
 		cout << "-----------------------------------------------" << endl;
 
