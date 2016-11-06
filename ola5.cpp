@@ -35,64 +35,55 @@ int main( void )
 	fstream myFile;
 	myFile.open("bst.dat");
 
-	//while (!myFile) //cycle through each set of data in bst.dat
 	int index = 0;
-	int nodeTotal = 0;
+	int treeCounter = 1;
 
-	BinarySearchTree<int>* tree = new BinarySearchTree<int>;
-
-	while (index != SentinelValue)
+	while(myFile >> index)		//cycle through each set of data in bst.dat
 	{
-		myFile >> index;
+		BinarySearchTree<int>* tree = new BinarySearchTree<int>;
+		int nodeTotal = 1;
 		tree->searchTreeInsert(index);
-		nodeTotal++;
 
-	}
+		while (index != SentinelValue)
+		{	
+			myFile >> index;
+			tree->searchTreeInsert(index);
+			nodeTotal++;
 
-	nodeTotal--; //subtract one to compensate for while loop always executing nodeTotal+1 times
+		}
 
-	//For each constructed binary search tree, perform followings:
-	//1.	calculate the total number of nodes in the BST
-	cout << "Total number of nodes: " << nodeTotal << endl;		//total nodes should be equal to number of inputs from data set
+		nodeTotal--; //subtract one to compensate for while loop always executing nodeTotal+1 times
 
-	//2.	calculate the total level of the BST
-	cout << "Total levels of tree: " << tree->totalLevel() << endl;
+		cout << "The Tree No. " << treeCounter << endl;
 
-	//3.	calculate the log(n) of the BST where n is the # of nodes in the BST
-	float logN = log(tree->totalLevel());
-	cout << "The log(n) of the tree is " << logN << endl;
+		//For each constructed binary search tree, perform followings:
+		//1.	calculate the total number of nodes in the BST
+		cout << "Number of Tree nodes: " << nodeTotal << endl;		//total nodes should be equal to number of inputs from data set
 
-	//4.	calculate the average level, i.e. total level / # of nodes
-	float AverageLevel = (tree->totalLevel() / nodeTotal);
-	cout << "The average level is " << AverageLevel << endl;
+		//2.	calculate the total level of the BST
+		cout << "Total levels of the tree: " << tree->totalLevel() << endl;
 
-	//5.	calculate the expression: AverageLevel/log(n)*/
-	cout << "The expression AverageLevel/log(n) is equal to " << AverageLevel / logN << endl;
+		//3.	calculate the log(n) of the BST where n is the # of nodes in the BST
+		float logN = log(tree->totalLevel());
+		cout << "The log(n) of the tree is " << logN << endl;
 
-	//When you are done with the tree, you need to clear it before inserting the next set of integers to it. You can use the
-		//following statement for this purpose:
-	//tree = BinarySearchTree<int>();
+		//4.	calculate the average level, i.e. total level / # of nodes
+		float AverageLevel = (tree->totalLevel() / nodeTotal);
+		cout << "The average level is " << AverageLevel << endl;
 
+		//5.	calculate the expression: AverageLevel/log(n)*/
+		cout << "AverageLevel/log(n) is " << AverageLevel / logN << endl;
 
-	//The definition for these member functions are provided by the instructor in the BST.h file. What you need to do is to
-		//implement them.
+		cout << "-----------------------------------------------" << endl;
 
-/*Sample output:  
-The Tree NO. 1
-# of tree node     : 10
-Total Level of the Tree : 33
-log(n) of the tree : 2.30259
-Average level: 3.3
-AverageLevel / log(n) = 1.43317
------------------------------------------------
-The Tree NO. 2
-# of tree node     : 100
-Total Level of the Tree : 921
-log(n) of the tree : 4.60517
-Average level: 9.21
-AverageLevel / log(n) = 1.99993
------------------------------------------------
-*/
+		//When you are done with the tree, you need to clear it before inserting the next set of integers to it. You can use the
+			//following statement for this purpose:
+		*tree = BinarySearchTree<int>();
+
+		treeCounter++;
+
+	}	//end while loop
+
 	myFile.close();
     return 0;
 }
