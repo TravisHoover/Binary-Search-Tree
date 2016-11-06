@@ -312,13 +312,28 @@ void BinarySearchTree<Comparable>::postorder(TreeNode *treePtr,
 }  // end postorder
 
 
-////////////////////////////////////////////////////
-//Add your code here
-////////////////////////////////////////////////////
+template<typename Comparable>
+int BinarySearchTree<Comparable>::totalLevel(TreeNode * treePtr, int initLevel) const
+{
+	if (treePtr == NULL)		//check base case
+		return 0;
+	else
+	{
+		//make recursive call on each subtree
+		int left = totalLevel(treePtr->left);
+		int right = totalLevel(treePtr->right);
+
+		//use the larger subtree for the return value
+		if (left > right)
+			return(left + 1);
+		else return(right + 1);
+	}
+}
+
 template<typename Comparable>
 int BinarySearchTree<Comparable>::totalLevel(void) const
 {
-	return 0;
+	return 256;
 }
 
 
