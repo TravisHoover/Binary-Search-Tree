@@ -15,21 +15,8 @@ const string    FileName = "bst.dat";
 // in the file FileName
 const int       SentinelValue = -1;
 
-//If you need to count the number of nodes in a Binary 
-//Search Tree of integers, please traverse the tree by passing
-//the following function as the parameter.
-//Remember, every time you count the number of nodes,
-//you have to initialize nodeCount by 0
-int nodeCount = 0;
-void nodeNum(int& nodeValue)
-{
-    nodeCount ++;
-}
-
-
 int main( void )
 {
-	
 	//Read each set of integers from “bst.txt” and construct a binary search trees by inserting them to an empty binary
 	//search tree in the given order.
 	fstream myFile;				//create file variable
@@ -62,15 +49,13 @@ int main( void )
 		cout << "Number of Tree nodes: " << nodeTotal << endl;		
 
 		//calculate the total level of the BST
-		int totalLevel = tree->totalLevel();
+		float totalLevel = tree->totalLevel();
 		cout << "Total levels of the tree: " << totalLevel << endl;
 
 		//calculate the log(n) of the BST where n is the # of nodes in the BST
-		//float logN = log(nodeTotal);
 		cout << "The log(n) of the tree is " << log(nodeTotal) << endl;
 
 		//calculate the average level, i.e. total level / # of nodes
-		//float averageLevel = (totalLevel / nodeTotal);
 		cout << "The average level is " << (totalLevel / nodeTotal) << endl;
 
 		//calculate the expression: AverageLevel/log(n)
