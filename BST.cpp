@@ -318,7 +318,6 @@ void BinarySearchTree<Comparable>::postorder(TreeNode *treePtr,
 template<typename Comparable>
 int BinarySearchTree<Comparable>::totalLevel(void) const
 {
-	cout << "totalLevel called";
 	return 0;
 }
 
