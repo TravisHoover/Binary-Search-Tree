@@ -1,0 +1,8 @@
+### Visual Studio ###
+*.opendb
+*.sdf
+*.sln
+*.vcxproj*
+*.tlog
+*.idb
+*.lastbuildstate

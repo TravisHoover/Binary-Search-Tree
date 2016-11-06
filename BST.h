@@ -104,7 +104,7 @@ private:
     //which is defined as the sum of levels of all nodes
     //initLevel is the level of the root node of treePtr in the original
     //tree
-    int totalLevel( TreeNode TreeNode * treePtr, int initLevel ) const;
+    int totalLevel( TreeNode* treePtr, int initLevel ) const;
     
     /****************************************************************
      *                                                              *

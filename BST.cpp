@@ -1,3 +1,4 @@
+//#include "BST.h"
 /** @file BST.cpp. */
 //#include "BST.h"     // header file
 
@@ -14,7 +15,7 @@ BinarySearchTree<Comparable>::BinarySearchTree(const BinarySearchTree& tree)
 	copyTree(tree.root, root);
 }  // end copy constructor
 
-template <typename Comparable>
+template <typename Comparable> 
 BinarySearchTree<Comparable>::~BinarySearchTree()
 {
 	destroyTree(root);
@@ -314,7 +315,12 @@ void BinarySearchTree<Comparable>::postorder(TreeNode *treePtr,
 ////////////////////////////////////////////////////
 //Add your code here
 ////////////////////////////////////////////////////
-
+template<typename Comparable>
+int BinarySearchTree<Comparable>::totalLevel(void) const
+{
+	cout << "totalLevel called";
+	return 0;
+}
 
 
 
