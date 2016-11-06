@@ -66,7 +66,7 @@ int main( void )
 		//When done with the tree, it needs to be cleared before inserting the next set of integers to it.
 		*tree = BinarySearchTree<int>();
 
-		treeCounter++;
+		treeCounter++;	//increase counter for number of trees
 
 	}	//end while loop
 

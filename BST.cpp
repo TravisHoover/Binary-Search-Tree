@@ -314,7 +314,9 @@ void BinarySearchTree<Comparable>::postorder(TreeNode *treePtr,
 
 template<typename Comparable>
 int BinarySearchTree<Comparable>::totalLevel(TreeNode * treePtr, int initLevel) const
-{
+{	
+	/*This function will determine the total levels, or height, of the tree being passed 
+		to it, starting at the root node*/
 	if (treePtr == NULL)		//check base case
 		return 0;			//return 0 if tree is empty
 	else
@@ -333,7 +335,7 @@ int BinarySearchTree<Comparable>::totalLevel(TreeNode * treePtr, int initLevel) 
 
 template<typename Comparable>
 int BinarySearchTree<Comparable>::totalLevel(void) const
-{
+{	/*This function is basically the accessor to run the private function totalLevel(TreeNode * treePtr, int initLevel) */
 	TreeNode * treePtr = this->rootPtr();	//create TreeNode pointer
 	int initLevel = 1;						//initial level will be root at level 1
 	return totalLevel(treePtr, initLevel);	//make call to private totalLevel function
