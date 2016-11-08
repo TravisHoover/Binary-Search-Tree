@@ -340,8 +340,3 @@ int BinarySearchTree<Comparable>::totalLevel(void) const
 	int initLevel = 1;						//initial level will be root at level 1
 	return totalLevel(treePtr, initLevel);	//make call to private totalLevel function
 }
-
-
-
-
-// End of implementation file.

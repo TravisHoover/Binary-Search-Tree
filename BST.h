@@ -73,11 +73,7 @@ public:
 	virtual BinarySearchTree& operator=(const BinarySearchTree& rhs);
 
 public:
-    /****************************************************************
-     *                                                              *
-     * You are required to implement the following member functions *
-     *                                                              *
-     ****************************************************************/
+
     //get the total level of the BST, which is defined as the sum
     //of levels of all nodes
     int totalLevel( void ) const;
@@ -104,13 +100,7 @@ private:
     //which is defined as the sum of levels of all nodes
     //initLevel is the level of the root node of treePtr in the original
     //tree
-    int totalLevel( TreeNode* treePtr, int initLevel ) const;
-    
-    /****************************************************************
-     *                                                              *
-     * End of member functions to be implemented in OLA7            *
-     *                                                              *
-     ****************************************************************/    
+    int totalLevel( TreeNode* treePtr, int initLevel ) const;    
     
 	/** Recursively inserts an item into a binary search tree.
 	* @pre treePtr points to a binary search tree, newItem is the
@@ -170,5 +160,4 @@ private:
 		TreeNode *rightChildPtr);
 
 }; // end BinarySearchTree
-   // End of header file.
 #include "BST.cpp"
